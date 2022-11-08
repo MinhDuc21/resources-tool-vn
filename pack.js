@@ -10,8 +10,8 @@ var HarumaToolKit = function () {
                         output: process.stdout
                     });
                     rl.question('Nhập tên thư mục: ', function (filedir) {
-                        console.log('0. Đóng gói Resources.json với số slot cố định [Chậm]');
-                        console.log('1. Đóng gói Resources.json với số slot cố định và shadow bugs [Chậm]');
+                        console.log('0. Đóng gói Resources.json với sửa slot [Chậm]');
+                        console.log('1. Đóng gói Resources.json với sửa slot và sửa lỗi bóng 2 đạn [Chậm]');
                         console.log('2. Đóng gói Resources.json và viết lại [Nhanh]');
                         rl.question('Bool: ', function (chooseFunc) {
                             if (parseInt(chooseFunc) == 2) {
