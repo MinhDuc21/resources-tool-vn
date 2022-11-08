@@ -9,15 +9,15 @@ var HarumaToolKit = function () {
                         input: process.stdin,
                         output: process.stdout
                     });
-                    rl.question('Input folder name: ', function (filedir) {
-                        console.log('0. Pack Resources.json with fixed slots [Slow]');
-                        console.log('1. Pack Resources.json with fixed slots and shadow bugs [Slow]');
-                        console.log('2. Pack Resources.json and rewrite [Fast]');
+                    rl.question('Nhập tên thư mục: ', function (filedir) {
+                        console.log('0. Đóng gói Resources.json với số slot cố định [Chậm]');
+                        console.log('1. Đóng gói Resources.json với số slot cố định và shadow bugs [Chậm]');
+                        console.log('2. Đóng gói Resources.json và viết lại [Nhanh]');
                         rl.question('Bool: ', function (chooseFunc) {
                             if (parseInt(chooseFunc) == 2) {
-                                rl.question('Would you like to delete 384 in subgroups ? ', function (delete384) {
-                                    rl.question('Would you like to delete 768 in subgroups ? ', function (delete768) {
-                                        rl.question('Would you like to delete 1536 in subgroups ? ', function (delete1536) {
+                                rl.question('Bạn có muốn xóa 384 trong subgroups ? ', function (delete384) {
+                                    rl.question('Bạn có muốn xóa 768 trong subgroups ? ', function (delete768) {
+                                        rl.question('Bạn có muốn xóa 1536 trong subgroups ? ', function (delete1536) {
                                             packResources(filedir, chooseFunc, delete384, delete768, delete1536);
                                         })
                                     })
@@ -47,7 +47,7 @@ var HarumaToolKit = function () {
                         const worker_768 = '_768';
                         const worker_1536 ='_1536';
                         const dir = './' + filedir + '/';
-                        console.time("Done function in ");
+                        console.time("Hoàn thành trong ");
                         const fs = require('fs');
                         var ResourcesGroup = [];
                         fs.readdir(dir, (err, files) => {
@@ -170,7 +170,7 @@ var HarumaToolKit = function () {
                                                                 flag: 'w'
                                                             });
                                                         try {
-                                                            console.timeEnd("Done function in ");
+                                                            console.timeEnd("Hoàn thành trong ");
                                                             process.exit(0);
                                                         } catch (error) {
                                                             console.log(error);
