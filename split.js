@@ -9,13 +9,13 @@ var HarumaToolKit = function () {
                         input: process.stdin,
                         output: process.stdout
                     });
-                    rl.question('Input your json name (without ".json"): ', function (filename) {
-                        rl.question('Input folder name: ', function (filedir) {
+                    rl.question('Nhập tên của json (không có ".json"): ', function (filename) {
+                        rl.question('Nhập tên của folder: ', function (filedir) {
                             WorkFunction(filename + '.json', filedir)
                         });
                     });
                     var WorkFunction = function (filename, filedir) {
-                        console.time("Done function in ");
+                        console.time("Hoàn thành trong ");
                         const dir = filedir + '/';
                         const fs = require('fs');
                         if (!fs.existsSync(dir)) {
@@ -39,7 +39,7 @@ var HarumaToolKit = function () {
                                                     });
                                                 if (i == (data.groups.length - 1)) {
                                                     try {
-                                                        console.timeEnd("Done function in ");
+                                                        console.timeEnd("Hoàn thành trong ");
                                                         process.exit(0);
                                                     } catch (error) {
                                                         console.log(error)
